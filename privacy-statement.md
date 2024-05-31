@@ -38,6 +38,29 @@ only have access to the data collected by the Tool if they are also an approved 
 Roots, developers also do not have access to the servers and other infrastructure that the Tool runs on.
 
 ## Data we collect
+### From all users
+When you use the Tool in any manner (including browsing the Tool's website without interacting with the Tool), our
+web server collects some information automatically with each request. Specifically:
+
+- The [IP address][enwiki-ip-address] of the device you are using to access the Tool, which may also reveal information
+  about your physical location.
+- The date and time of your access to the Tool.
+- The [HTTP method][enwiki-http-methods] and page you are accessing on the Tool (request path), but _not_ the data
+  your browser sent to us (request body), if any.
+- The [HTTP status code][enwiki-http-statuses] and size of the server's response to your request, but _not_ the contents
+  of the response (response body).
+- The [User-Agent string][enwiki-user-agent] of your web browser, which may reveal information about your device and
+  browser.
+
+This logging is done by the server software which the Tool runs on; it is separate from the data collected by the Tool
+itself, which is documented below.
+
+We collect this information in order to monitor use of the Tool; for example, to identify and investigate any technical
+issues, and to detect and prevent abuse of the Tool. These logs are only accessible to the Tool Roots, and are
+automatically permanently deleted after 14 days. The data contained within is never shared or sold.
+
+**All users are required to adhere to the [Wikimedia Cloud Services End User Terms of Use][wmcs-tou-users].**
+
 ### From Requesters
 When you use the English Wikipedia Account Creation Assistance Tool to request that an account be created for you, we
 assign a unique numeric request identifier to your request. This identifier is used to allow both Account Creators to
@@ -93,7 +116,7 @@ an uncommon service, we may look up the domain portion (the part after the `@`) 
 cases, we take care to ensure that your unique request identifier and your requested username are not shared with these
 services, so that there is no way for that service to associate the information provided to it with your account request
 or Wikipedia username. This data is also never automatically shared; the action must be initiated by an Account Creator
-and is logged for auditing purposes.
+as part of their duties in processing your request.
 
 In addition, if the Account Creators decide to fulfill your account request, your username and email will be provided to
 Wikipedia in order to create your account. All Wikipedia accounts are required to have a username which is displayed
@@ -127,14 +150,15 @@ and may face additional sanction, as prescribed by the Wikimedia Foundation.
    team**. A random password will be automatically emailed to you if your account is created, and you will be able to
    change it to a password of your choice after you log in for the first time. Account Creators do not have access to
    your password, and you should never share your password with anyone.
-3. **Requesters are required to adhere to the [Wikimedia Cloud Services End User Terms of Use][wmcs-tou-users].**
+3. **All users, including Requesters, are required to adhere to the [Wikimedia Cloud Services End User Terms of
+   Use][wmcs-tou-users].**
 
 ### From Account Creators
 In order to use the Tool, we collect the following information from prospective Account Creators:
 
-- A username used to identify yourself on the Tool. This need not be your real name. It also need not be the same as
-  your Wikipedia username, however, we do also collect your Wikipedia username and associate it with your Tool username
-  (see below).
+- A username used to identify yourself on the Tool. This need not be your real name. It also does not need to be the
+  same as your Wikipedia username, however, we do also collect your Wikipedia username and associate it with your Tool
+  username (see below).
 - A password used to log in to the Tool. To protect your information, your password is salted and hashed using the
   `bcrypt` algorithm before being stored in the Tool's database. **Please use a unique password. Do not use a password
   that you use on any other site, and especially do not use the same password as used on any other Wikimedia project.**
@@ -168,7 +192,8 @@ marked within the Tool and Account Creators are responsible for ensuring they do
 wish to share. For example, it is not required that you use your real name in your Tool username or as your email
 signature, but if you do, you are consenting to making it visible to the public.
 
-**Account Creators are required to adhere to the [Wikimedia Cloud Services End User Terms of Use][wmcs-tou-users].**
+**All users, including Account Creators are required to adhere to the [Wikimedia Cloud Services End User Terms of
+Use][wmcs-tou-users].**
 
 ## Disclaimers
 Wikimedia Cloud Services (WMCS) is a project run by Wikimedia Foundation staff as well as trusted volunteers from the
@@ -194,11 +219,13 @@ history][privacy-statement-history].
 [acc-users]: https://accounts.wmflabs.org/internal.php/statistics/users
 [wmf-confidentiality-agreement]: https://foundation.wikimedia.org/wiki/Legal:Confidentiality_agreement_for_nonpublic_information
 [github-waca]: https://github.com/enwikipedia-acc/waca
+[enwiki-ip-address]: https://en.wikipedia.org/wiki/IP_address
+[enwiki-http-methods]: https://en.wikipedia.org/wiki/HTTP#Request_methods
+[enwiki-http-statuses]: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+[enwiki-user-agent]: https://en.wikipedia.org/wiki/User-Agent_header
+[wmcs-tou-users]: https://wikitech.wikimedia.org/wiki/Wikitech:Cloud_Services_End_User_Terms_of_use
 [enwiki-user-creation]: https://en.wikipedia.org/w/index.php?title=Special:Log&type=newusers
 [enwiki-upol]: https://en.wikipedia.org/wiki/Wikipedia:Username_policy
-[wmcs-tou-users]: https://wikitech.wikimedia.org/wiki/Wikitech:Cloud_Services_End_User_Terms_of_use
-[enwiki-ip-address]: https://en.wikipedia.org/wiki/IP_address
-[enwiki-user-agent]: https://en.wikipedia.org/wiki/User-Agent_header
 [enwiki-client-hints]: https://en.wikipedia.org/wiki/HTTP_Client_Hints
 [wmf-privacy-policy]: https://foundation.wikimedia.org/wiki/Policy:Privacy_policy
 [enwiki-upol-real-names]: https://en.wikipedia.org/wiki/Wikipedia:Username_policy#Real_names
